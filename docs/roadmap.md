@@ -19,4 +19,4 @@ Her faz için plan ve READY durumundaki Issue kapsamı kullanıcı tarafından o
 - Monetizasyon, multiplayer, live ops, backend ve iOS yayımlama otomatik MVP kapsamına girmez.
 - Süre/sayısal içerik miktarları onaylanmış taahhüt değildir; ilk oynanabilir deneyimle ölçülür.
 
-**Planlama durumu:** Faz 0 ayrıntılı Issue planı **henüz hazırlanmadı ve onaylanmadı**. Kullanıcıyla birlikte sonraki adımda yapılacak. Sonraki fazlar yalnız üst seviye öneri olarak kayıtlıdır.
+**Planlama durumu:** [Faz 0 DRAFT planı](phases/phase-0-plan.md) ve DRAFT Issue #2–#8 hazırlandı; **kullanıcı onayı verilmedi, Faz 0 başlatılmadı**. Sonraki fazlar yalnız üst seviye öneri olarak kayıtlıdır.
