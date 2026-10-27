@@ -1,5 +1,5 @@
 # DragonsLair — Game Design Document (GDD)
-**Sürüm:** 0.2 / ürün görüşü girdilerinin işlendiği taslak  
+**Sürüm:** 0.3 / 25 ürün yanıtı + 4 tasarım netleştirmesi; henüz DRAFT  
 **Tarih:** 2026-10-27  
 **Durum:** DRAFT — kullanıcı tarafından iletilen 25 ürün yanıtı kaydedildi; nihai ürün sahipliği/teknik onay ve referans oynanış doğrulaması bekliyor.  
 **Çalışma adı:** DragonsLair. Yayın/marka kararı değildir.
@@ -30,9 +30,9 @@ Stickman Defense: Survival TD'nin **savaş içi yükseltme seçimi, seçilen yü
 **Kamera:** Referans oyundaki savaş sunumuna benzer ritim/düzen tercih edildi; ekran **yatay**. **2.5D** sanat tercihi alındı, fakat kamera açısı/yerleşimi ve 2D sprite-derinlik vs 3D sahne uygulaması teknik araştırma sonrasında belirlenir.
 
 ## 4. Bölüm, etkinlik, zindan ve ödüller
-- **Normal dalga/bölüm hedef süresi:** 4 dakika. Bunun tek bir dalga mı, tüm bölümün dalgaları dahil süresi mi olduğu ve boss'un süreye dahil olup olmadığı Faz 0'da netleştirilecek.
+- **Normal bölümdeki düşman dalgaları toplam 4 dakika sürer; ardından ayrı bir boss savaşı başlar.** Boss süresi 4 dakikanın dışında kalır. Boss için üst süre ve zaman aşımı kuralı henüz OPEN.
 - **Özel etkinlik hedef üst sınırı:** 10 dakika.
-- **İlk oynanabilir demo:** 2–3 dakikalık bir dalga savaşı + sonunda boss. Bu, normal tam bölümden kısa bir **test** deneyimidir.
+- **İlk oynanabilir demo:** 2–3 dakikalık düşman dalgaları, ardından boss. Bu tam bölüm değil, daha kısa bir **test** deneyimidir. İlk prototipin çekirdeği otomatik savaş, kart seçimleri ve örnek evrimlerdir; özel yeteneklerin manuel/oto kullanımı, Rage ve yardımcı ejderhalar sonraki geliştirme aşamalarına ertelendi.
 - Referansın dalga/savunma içeriğine ek olarak **zindan (Dungeon Dive) ve farklı etkinliklerle sürekli ilerleme yolları** bulunmalı; miktar ve mod kuralları sonradan belirlenir.
 - **Enerji kazanımı daha kolay** ve **günlük Dungeon Dive giriş sayısı daha yüksek** olsun; referansa göre hangi oranda olduğu bilinmiyor. Erken prototipte eğlence döngüsünü enerji kapısıyla sınırlamak gerekmiyor.
 - **Kaybedilen koşu** baştan başlar; öldürülen canavar ve ilerleme üzerinden kısmi ödül alınır, miktar **tam maksimum ödülün %50'sini geçemez**. Formül, kötüye kullanım/farm riskleri ve ödül türleri TBD.
@@ -70,7 +70,7 @@ Stickman Defense: Survival TD'nin **savaş içi yükseltme seçimi, seçilen yü
 
 ## 7. Sanat, animasyon ve AI üretimi
 - **Sanat tonu:** Stilize, fantastik, güçlendikçe daha görkemli.
-- **Sunum tercihi:** 2.5D; teknik karşılığı (3D modeller + sabit kamera / 2D derinlik hissi) ve motor seçimi TBD.
+- **Sunum tercihi:** 2.5D; teknik yöntem henüz OPEN. **2D sprite + katmanlı derinlik** ve **3D karakter/ortam + sabit/yarı sabit kamera** yaklaşımları birer küçük, karşılaştırılabilir örnekle değerlendirilecek. Nihai görsel hat ve motor seçimi, oynanış/animasyon/Android performansı ve üretim maliyeti birlikte incelenmeden yapılmayacak.
 - Yapay zekâdan olabildiğince yararlanılsın; ancak **üretilmiş konsept resmi = oyun-hazır animasyon/rig/efekt** değildir. Tutarlılık, farklı form/evrim animasyonları, performans ve lisans için kalite kapısı zorunlu.
 - Claude Code asset düzenleme, import, rig/animasyon yardımcı betikleri, shader/partikül ve oyun entegrasyonunu otomatikleştirebilir; çıktılar gerçek sahnede gözle incelenir.
 - Kaynak/lisans, üretim araçları ve ticari kullanım hakkı her varlık için kayıt edilir. Ücretli araç kullanımı kullanıcı onayı gerektirir.
@@ -88,7 +88,7 @@ Stickman Defense: Survival TD'nin **savaş içi yükseltme seçimi, seçilen yü
 - **Savaş içi beceri kartları**, en az birkaç anlamlı yükseltme/sinerji denemesi.
 - **Birkaç evrim örneğinin** etkisini gösteren, nicelik hedefi sonradan belirlenecek görsel ve saldırı davranışı.
 - Saldırı/hasar, HP, dalga/başarı/yenilgi, yükseltme farkı gözlenebilir.
-- Manuel/auto özel yetenek ve Rage gibi mekaniklerin **prototip çekirdeğine mi, sonraki iterasyona mı** gireceği onayla belirlenecek; teknik sözleşmeleri en azından değerlendirilir.
+- **İlk demo dışında:** Manuel/otomatik özel yetenek kullanımı, Rage ve yardımcı ejderhaların tam savaş mekaniği sonraki iterasyonlara bırakılacak. Faz 0'da gelecekte eklenebilirlik analiz edilir; Faz 1'de tamamlanmaları kabul ölçütü değildir.
 
 ### İlk demo dışındaki ürün vizyonu (otomatik kapsam taahhüdü değil)
 Yardımcı ejderhalar, tür çeşitliliği, tam ekipman ve rün ekonomisi, Dungeon Dive/günlük etkinlikler, ilerleme ve kısmi ödül sistemi, detaylı Rage dengesi, dış dünya biyomları, tüm boss çeşitliliği, tüm evrim ağacı ve mobil yayın kalitesi sonraki fazların adaylarıdır.
@@ -98,7 +98,7 @@ Bir test oyuncusu hikâye metni olmadan kısa koşuyu başlatabilir, ejderhanın
 
 ## 10. Fazlar (üst düzey öneri, henüz kesinleştirilmedi)
 - **Faz 0 — Referans analizi / GDD / teknik & sanat fizibilitesi.** Mevcut DRAFT Issue #2–#8. Yeni yanıtlar #3 için gereksinim girdi ve diğer Issue'lar için kısıt oldu.
-- **Faz 1 — Çekirdek savaş prototipi.** Kısa mağara koşusu, otomatik hareket/saldırı, kartlar, boss, sınırlı evrim örneği. Sıra, demo kapsamı ve özel yetenek önceliği Faz 0 sonunda onaylanır.
+- **Faz 1 — Çekirdek savaş prototipi.** 2–3 dk dalga + boss, otomatik hareket/saldırı, kartlar ve sınırlı evrim örnekleri. Özel yetenek, Rage ve yardımcı ejderhalar bu prototipin kapsamı dışında; görevlerin kesin içeriği Faz 0 sonunda onaylanır.
 - **Faz 2 — Ejderha gelişimi, build ve savaş katmanı.** Kalıcı stat/ekipman/rün, koşu yükseltmeleri, Rage, özel yetenek auto-tetikleme, yardımcı ejderha ve sistem sinerjileri için kademeli plan.
 - **Faz 3 — Görsel üretim hattı ve içerik.** 2.5D stilin uygulanması, evrim animasyonları, düşman/boss farklılıkları, zindan/etkinlik adayları ve mekân çeşitliliği.
 - **Faz 4 — Android MVP + playtest.** 4 dakikalık normal bölüm hedefi, özel etkinlikler için maksimum 10 dakika, kayıt/ödül sistemi, gerçek cihaz performansı ve denge; hangi sistemlerin MVP kapsamında olacağı oyun testlerinden sonra kesinleştirilir.
@@ -114,13 +114,13 @@ Aşağıdaki `DIRECTION_RECEIVED` satırları cevaplanan tercihlerdir; **APPROVE
 | D-001 | Kadro modeli | DIRECTION_RECEIVED — ana + yardımcı ejderha (hibrit), başlangıç tek yavru | yardımcı açılış, sayı, roller |
 | D-002 | Referansta sevilenler | DIRECTION_RECEIVED — eklenti/kart koşullu güçlenmesi, build özelleştirme, alternatif sürekli ilerleme | gerçek oynanış kurallarını kanıtla |
 | D-003 | Kontrol/kamera | DIRECTION_RECEIVED — otomatik hareket/saldırı, manuel/auto özel yetenek, yatay referans benzeri | tam kamera açısı, HUD özgün kompozisyonu |
-| D-004 | Sanat tekniği | DIRECTION_RECEIVED — 2.5D | gerçek 2D/3D pipeline, animasyon denemesi |
+| D-004 | Sanat tekniği | DIRECTION_RECEIVED — 2.5D; 2D katmanlı ve 3D sabit kamera küçük karşılaştırmalarla değerlendirilecek | Sonuç ve teknik pipeline seçimi OPEN |
 | D-005 | Oyun motoru | OPEN — Godot/Unity değerlendirilecek | lokal test, Android export, ekip yetkinliği |
 | D-006 | Evrim | DIRECTION_RECEIVED — kalıcı + geçici; görsel ve saldırı değişir | eşikler, ağaç/çeşit, prototip örnekleri |
 | D-007 | Kaybetme nesnesi | DIRECTION_RECEIVED — ana ejderha HP | yardımcı hasar/ölüm kuralları |
-| D-008 | Koşu süresi/sonuç | DIRECTION_RECEIVED — normal 4 dk, etkinlik ≤10 dk, yenilgide kısmi ödül ≤%50 | 4 dk tek dalga mı tüm bölüm mü; boss süresi/ödül formülü |
+| D-008 | Koşu süresi/sonuç | DIRECTION_RECEIVED — normal bölümde 4 dk toplam dalga, **ardından ayrı boss**; etkinlik ≤10 dk, yenilgide kısmi ödül ≤%50 | Boss üst süresi/zaman aşımı ve kısmi ödül formülü OPEN |
 | D-009 | Sanat tonu | DIRECTION_RECEIVED — stilize fantazi, 2.5D | referans görseli ve üretim stil kılavuzu |
-| D-010 | Sahiplik/IP | OPEN — iki geliştirici kontrol etsin | kişilerin yetkisi, fikrin sahibinin hakkı, repo public/private, yayın hakları |
+| D-010 | Sahiplik/IP | **OPEN — henüz karar verilmedi**; iki geliştirici kontrolü önceki bir tercih, hukuki onay değildir | Repo public/private, ortak haklar, üçüncü taraf varlık lisansları, yayın hesapları ve yetkiler OPEN |
 | D-011 | Monetizasyon | DEFERRED — önce eğlence; model sonra | reklam/IAP ve enerji kısıtları |
 | D-012 | Hedef cihaz/platform | DIRECTION_RECEIVED — Android → iOS | cihaz, minimum Android / FPS ve performans |
 | D-013 | Rage modu | DIRECTION_RECEIVED — kill eşiğinde açılır | sayaç/reset/eşik/süre/etki |
@@ -132,9 +132,9 @@ Aşağıdaki `DIRECTION_RECEIVED` satırları cevaplanan tercihlerdir; **APPROVE
 ## 12. Faz 0'da mutlaka netleştirilmesi gerekenler (kısa liste)
 1. **Referans ekran kaydı**: kamera, kart/upgrade geliş mekanikleri, koşu ve boss geçişleri; [#2](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/2).
 2. **2.5D teknik çözüm** ve oyun motoru; #5/#6.
-3. **4 dakika tanımı**: bir bölüm toplamı mı tek dalga mı, boss bu süreye dahil mi?
-4. **İlk 2–3 dakikalık demoda** kaç yükseltme/evrim, Rage ve özel yetenek toggle nerede başlayacak?
-5. **Public repo ve fikrî mülkiyet**: iki geliştiricinin kontrol düzeyi, içerik ve mağaza hesapları; #3.
+3. **Normal bölüm süre yapısı netleşti:** toplam 4 dk dalga, sonra boss; yalnız boss maksimum süresi/zaman aşımı OPEN.
+4. **İlk 2–3 dakikalık demo:** otomatik saldırı + kartlar + sınırlı evrim + boss; Rage, manuel/oto özel yetenek ve yardımcılar sonraya ertelendi. Kart/evrim adetleri testle netleşecek.
+5. **Public repo ve fikrî mülkiyet tamamen OPEN**: iki geliştiricinin kontrol düzeyi, içerik hakları ve mağaza hesapları; #3. Bu karar henüz verilmedi.
 6. Referansın keyif veren build-zinciri mekaniklerinin hangi davranışları birebir hissettirilecek, hangileri özgün ejderha varyantları olacak?
 
 Bunlar netleşene dek belirsizlikler mimariye gizlice gömülmeyecek; ancak belgeler üzerinde planlamayı durdurmaz.
@@ -146,4 +146,5 @@ Akış: DRAFT → READY (açık kullanıcı onayı) → IN_PROGRESS (faz başlat
 
 ## 14. Değişiklik geçmişi
 - **v0.1 — 2026-10-26:** İlk ilke, referans sınırı, örtük anlatı, belirsiz kararlar.
-- **v0.2 — 2026-10-27:** 25 yanıt işlendi: hibrit ejderha, otomatik hareket/saldırı + özel yetenek, yatay 2.5D, koşu süresi ve kayıp ödülü, build/ekipman/rün, Rage, geçici/kalıcı evrim, boss, zindan/etkinlik, AI asset, Android → iOS ve demo. Durum hâlâ DRAFT.
+- **v0.2 — 2026-10-27:** 25 yanıt işlendi: hibrit ejderha, otomatik hareket/saldırı + özel yetenek, yatay 2.5D, koşu süresi ve kayıp ödülü, build/ekipman/rün, Rage, geçici/kalıcı evrim, boss, zindan/etkinlik, AI asset, Android → iOS ve demo.
+- **v0.3 — 2026-10-27:** 4 takip kararı: 4 dk dalga ardından boss; ilk demoda yalnız çekirdek kart+evrim (Rage/özel yetenek/helper ertelendi); iki 2.5D yöntemi örnekle karşılaştırılacak; repo görünürlüğü/IP OPEN. DRAFT statüsü ve faz onayı değişmedi.
