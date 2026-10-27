@@ -1,22 +1,25 @@
-# DragonsLair — Yol haritası (DRAFT)
-**Tarih:** 2026-10-26 · **Durum:** ÖNERİ / kullanıcı kabulü bekleniyor. Hiçbir faz başlatılmadı.
+# DragonsLair — Yol haritası (DRAFT, v0.2 ürün girdisiyle uyumlu)
+**Tarih:** 2026-10-27 · **Durum:** ÖNERİ / resmi kapsam ve geliştirme onayı bekleniyor. Hiçbir faz başlatılmadı.
 
-Her faz için plan ve READY durumundaki Issue kapsamı kullanıcı tarafından onaylanmadan Claude Code işe başlamaz. Faz kabulü veya PR kabulü sıradaki fazı başlatmaz. Temel ürün ilkeleri için [GDD](game-design/GDD.md).
+[Game Design Document v0.2](game-design/GDD.md) kullanıcı tarafından iletilen 25 cevabı ve açık kararları içerir. [Görüş girdisi](requirements/design-intake-2026-10-27.md) yanıtlara izlenebilirlik sağlar. Oyunun kimliği: **referansa yakın otomatik savaş / build seçimi / sürekli gelişim; özgün hibrit ejderha sistemi; hikâye odaklı değil.**
 
-| Faz | Hedef | Teslim / çıkış kapısı |
+| Faz | Hedef | Teslim ve onay kapısı |
 |---|---|---|
-| **0 — Referans analizi ve tasarım** | Referans oynanışı kanıta dayalı incele; arkadaşın kararlarını/önceliklerini öğren; özgünlük sınırı; 2D/3D ve motor için küçük fizibilite; prototip kapsamını yaz | GDD revizyonu, açık karar listesi, Faz 1 READY adayları; kullanıcı kabulü |
-| **1 — Temel savaş prototipi** | Otomatik saldırı, düşman dalgaları, hasar, XP, roguelike yükseltme seçimi, zafer/yenilgi; placeholder varlıklar serbest | Kısa oynanabilir mağara savunma koşusu; hedefli testler, görsel smoke, temel oynanış geri bildirimi |
-| **2 — Ejderha gelişimi ve evrim** | Onaylanmış tek/takım/hibrit modele göre gelişim, koşu içi/kalıcı ilerleme ayrımı ve evrimin oynanış etkisi | Test edilebilir gelişim döngüsü ve birkaç anlamlı kombinasyon |
-| **3 — Görsel kimlik ve içerik** | Özgün ejderha/düşman/ortam, animasyon, savaş efektleri, HUD okunabilirliği, ses; küçükten insan akınına geçiş | Tutarlı sanat hattı ve genişletilmiş oynanış içeriği |
-| **4 — Mobil MVP ve testler** | Android export, veri saklama, dokunmatik deneyim, performans, fiziksel cihaz testleri, playtest ve dengeleme | Gerçek telefonda incelenebilir MVP ve kanıt raporu |
-| **5 — Yayın hazırlığı** | Mağaza, lisans, gizlilik, marka, kalite ve dağıtım kontrolleri; yayın stratejisi | Yayın kararı için sürüm adayı; yayınlama ayrıca onay gerektirir |
+| **0 — Referans ve tasarım** | Kanıta dayalı referans incelemesi; gelen ürün yanıtları ve kalan kararların düzenlenmesi; 2.5D sanat + motor fizibilitesi; ilk prototip görevleri | Güncel GDD, kısa oynanış sözleşmesi, kararlar, Faz 1 DRAFT Issue seti |
+| **1 — Savaş prototipi** | Yavru ejderha; oto hareket/saldırı; kart ve güçlendirme seçimi; kısa (2–3 dk) mağara koşusu, boss ve birkaç *örnek* evrim formu/saldırısı | Bir oyuncu kart etkisini, evrimi ve boss mücadele sonucunu hissedebiliyor mu? |
+| **2 — Gelişim ve build sistemi** | Kalıcı ejderha seviyesi, ekipman/rün/pasifler; koşu içi yükseltmeler ve güçlü sinerjiler; Rage, özel yetenekler/auto-toggle, yardımcı ejderhalar **risk bazlı alt görevlere ayrılarak** | Çeşitli oynanış tarzı ve kayıt tutarlılığı için küçük testler |
+| **3 — Özgün görsel ve içerik hattı** | 2.5D yaratım ve animasyon hattı; fiziksel evrim, farklı düşman ve boss'lar; mağara → dış dünya; etkinlik/zindan **yalnız öncelik onayı alırsa** | Özgün ve okunur sanat, yeniden üretilebilir asset hattı |
+| **4 — Android MVP ve testler** | Gerçek Android testleri, dokunmatik, performans, kaydet/yükle, bölüm/ödül akışı; 4 dk normal bölüm ve ≤10 dk etkinlik tasarım hedefleri | Telefonda kabul edilebilir MVP, insan playtest, risk temelli regresyon |
+| **5 — Yayın hazırlığı** | Marka/IP, mağaza ve dağıtım, lisans, gizlilik; gerekirse gelecek gelir modeli | Kullanıcı onaylı yayın adayı; yayın ayrıca açık onay gerektirir |
 
-**Önemli bağımlılıklar:**
-- Faz 0'daki oyun referansı incelemesi, Faz 1'in mekanik ve kamera kararlarını besler.
-- Görsel üretim fizibilitesi Faz 0'da başlar; gerçek sanat içeriği Faz 3'e bırakılsa da Faz 1'de placeholder animasyon/efekt bulunur.
-- Ejderha organizasyon modeli (**D-001**) Faz 2'de kesinleşmeden çoklu ejderha mimarisi taahhüt edilmez.
-- Monetizasyon, multiplayer, live ops, backend ve iOS yayımlama otomatik MVP kapsamına girmez.
-- Süre/sayısal içerik miktarları onaylanmış taahhüt değildir; ilk oynanabilir deneyimle ölçülür.
+**Açık gereksinim / kapsam kapıları:**
+- **D-001:** Hibrit ana + yardımcı model tercih edildi, ama Faz 1 kısa testinde yardımcıların tam mekanizması şart değildir. Faz 2'de kapsam onayı gerekir.
+- **D-003/D-004/D-005:** Otomatik savaş ve 2.5D tercihleri var; kamera yerleşimi/2.5D pipeline/motor henüz mimari karar değildir.
+- **D-008:** 4 dk tanımı ve boss süresi netleştirilecek; **Faz 1 demosu bilinçli olarak 2–3 dk**.
+- **D-006:** İlk prototipte birkaç evrim örneğinin hareket/saldırı farkı gösterilecek; tam evrim ekonomisi sonraya.
+- **D-010:** İki geliştirici kontrolü yönü var; IP ve repo görünürlüğü henüz açık.
+- Dungeon Dive / etkinlik / enerji ve kapsamlı build ekonomisi **ürün vizyonudur**, kendiliğinden prototip kabul kriteri değildir.
 
-**Planlama durumu:** [Faz 0 DRAFT planı](phases/phase-0-plan.md) ve DRAFT Issue #2–#8 hazırlandı; **kullanıcı onayı verilmedi, Faz 0 başlatılmadı**. Sonraki fazlar yalnız üst seviye öneri olarak kayıtlıdır.
+**Uygulama yöntemi:** Faz 0 [DRAFT planı](phases/phase-0-plan.md) ve [DRAFT Issue #2–#8](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues) mevcut. Her fazın READY görevlerine kullanıcı onay verir, sonra `Faz N'i başlat` ile yürütülür. Olağan uygulama/test/PR işleri kapsam içinde yürütülür; merge için ayrıca onay. Faz bitmesi sonrakini başlatmaz.
+
+**CI politikası:** GitHub Actions / hosted CI yok; kod değişimine uygun dar test, Issue sonunda scene smoke, faz sonunda seçilmiş regresyon, kilometre taşında Android cihaz testi.
