@@ -1,7 +1,7 @@
 # DragonsLair — Yol haritası (DRAFT, v0.2 ürün girdisiyle uyumlu)
 **Tarih:** 2026-10-27 · **Durum:** ÖNERİ / resmi kapsam ve geliştirme onayı bekleniyor. Hiçbir faz başlatılmadı.
 
-[Game Design Document v0.2](game-design/GDD.md) kullanıcı tarafından iletilen 25 cevabı ve açık kararları içerir. [Görüş girdisi](requirements/design-intake-2026-10-27.md) yanıtlara izlenebilirlik sağlar. Oyunun kimliği: **referansa yakın otomatik savaş / build seçimi / sürekli gelişim; özgün hibrit ejderha sistemi; hikâye odaklı değil.**
+[Game Design Document v0.3](game-design/GDD.md) kullanıcı tarafından iletilen 25 cevabı ve açık kararları içerir. [Görüş girdisi](requirements/design-intake-2026-10-27.md) yanıtlara izlenebilirlik sağlar. Oyunun kimliği: **referansa yakın otomatik savaş / build seçimi / sürekli gelişim; özgün hibrit ejderha sistemi; hikâye odaklı değil.**
 
 | Faz | Hedef | Teslim ve onay kapısı |
 |---|---|---|
@@ -14,10 +14,10 @@
 
 **Açık gereksinim / kapsam kapıları:**
 - **D-001:** Hibrit ana + yardımcı model tercih edildi, ama Faz 1 kısa testinde yardımcıların tam mekanizması şart değildir. Faz 2'de kapsam onayı gerekir.
-- **D-003/D-004/D-005:** Otomatik savaş ve 2.5D tercihleri var; kamera yerleşimi/2.5D pipeline/motor henüz mimari karar değildir.
-- **D-008:** 4 dk tanımı ve boss süresi netleştirilecek; **Faz 1 demosu bilinçli olarak 2–3 dk**.
-- **D-006:** İlk prototipte birkaç evrim örneğinin hareket/saldırı farkı gösterilecek; tam evrim ekonomisi sonraya.
-- **D-010:** İki geliştirici kontrolü yönü var; IP ve repo görünürlüğü henüz açık.
+- **D-003/D-004/D-005:** Otomatik savaş ve 2.5D tercihleri var; 2D katmanlı derinlik ve 3D sabit kamera küçük örneklerle karşılaştırılacak; kamera/nihai pipeline/motor OPEN.
+- **D-008:** Normal bölüm: toplam **4 dk dalga, ardından boss**; boss üst süresi/zaman aşımı OPEN. **Faz 1 demosu bilinçli olarak 2–3 dk dalga + boss**.
+- **D-006:** İlk prototipte birkaç evrim örneğinin hareket/saldırı farkı gösterilecek; tam evrim ekonomisi sonraya. **Özel yetenek/Rage/helper sistemleri ilk demo dışında**, sonraki iterasyon adayı.
+- **D-010:** Repo görünürlüğü, iki geliştirici ile fikrin sahibinin IP ve yayın hakları **tamamen OPEN**; mevcut public görünürlük otomatik onay sayılmaz.
 - Dungeon Dive / etkinlik / enerji ve kapsamlı build ekonomisi **ürün vizyonudur**, kendiliğinden prototip kabul kriteri değildir.
 
 **Uygulama yöntemi:** Faz 0 [DRAFT planı](phases/phase-0-plan.md) ve [DRAFT Issue #2–#8](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues) mevcut. Her fazın READY görevlerine kullanıcı onay verir, sonra `Faz N'i başlat` ile yürütülür. Olağan uygulama/test/PR işleri kapsam içinde yürütülür; merge için ayrıca onay. Faz bitmesi sonrakini başlatmaz.
