@@ -40,3 +40,16 @@
 
 ## Değişiklik / onay işleyişi
 Yanlış yorum varsa bu intake kaydı ve GDD revize edilir. Onaylı ürün kararı, ayrı kullanıcı/ürün sahibi onayı ile GDD'deki ilgili D-ID'de `APPROVED` yapılır; yeni özellik tek başına Faz 1 READY veya geliştirme izni vermez.
+
+## Takip netleştirmeleri — 2026-10-27
+
+Bu dört yanıt, önceki 25 soruya **ek** ürün görüşü girdisidir; `APPROVED`/faz başlatma onayı değildir.
+
+| ID | Gelen yanıt | Etkilenen karar ve kalan OPEN |
+|---|---|---|
+| T-01 | Normal bölümde **4 dakika düşman dalgaları**, ardından **boss savaşı** | D-008; boss üst süresi ve zaman aşımı OPEN |
+| T-02 | İlk 2–3 dk prototipte **kartlar ve evrim örnekleri**; Rage, manuel/otomatik özel yetenek ve yardımcılar sonra | D-003/D-006/D-013/D-014 ve Faz 1 kapsamı; adet/ayrıntılar OPEN |
+| T-03 | 2.5D için **2D sprite + derinlik** ile **3D model + sabit kamera** küçük karşılaştırılabilir denemeler | D-004/D-005; sonuç, motor ve nihai teknik seçim OPEN |
+| T-04 | Repo görünürlüğü ve ürün/IP hakları için **henüz karar verilmedi** | D-010 OPEN; repodaki public durum otomatik onay sayılmaz |
+
+Yorumlama kuralı: Burada yalnızca kullanıcının verdiği tercih aktarılmıştır; fikrin sahibi arkadaşın ayrı onayı varsayılmaz. Kanonik güncel statüler [GDD §11](../game-design/GDD.md) içindedir.
