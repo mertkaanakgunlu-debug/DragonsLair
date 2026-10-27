@@ -1,7 +1,7 @@
 # Faz 0 — Referans Oyun Analizi ve Tasarım Doğrulaması
 
 **Durum:** DRAFT / plan hazır, **çalışma BAŞLAMADI**  
-**Tarih:** 2026-10-26  
+**Güncelleme:** 2026-10-27 — 25 cevap görüş girdisi geldi, görevler hâlâ DRAFT  
 **Bağlı PR:** #1 (başlangıç belgeleri; draft, merge değil)  
 **Amaç:** Stickman Defense: Survival TD oynanışının gerçekten sevilen prensiplerini anlamak ve bunlara dayalı, özgün bir ejderha savunma prototipini küçük, test edilebilir görevlere çevirmek.
 
@@ -10,7 +10,7 @@
 | Grup | GitHub Issue | Somut çıktı | Önkoşul |
 |---|---|---|---|
 | A — Referans | [#2](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/2) Kanıta dayalı oynanış analizi | Kaynak/gözlem işaretli mekanik envanteri | Yok |
-| A — Ürün | [#3](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/3) Arkadaşın tercihleri ve kararlar | Onaylı, öneri ve OPEN ayrılmış brief | Yanıt gelmeyebilir; eksikler OPEN |
+| A — Ürün | [#3](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/3) Arkadaşın tercihleri ve kararlar | Onaylı, öneri ve OPEN ayrılmış brief | 25 yanıt kaydedildi; yoruma/nihai onaya açıklar OPEN |
 | B — Tasarım | [#4](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/4) Çekirdek döngü sözleşmesi | İlk koşu akışı ve ölçülebilir playtest | #2 ve erişen #3 yanıtları |
 | A — Sanat | [#5](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/5) AI art/animasyon hattı | 2D/3D seçenek tablosu, lisans ve maliyet | Yok; #6 ile bilgi paylaşır |
 | A/B — Teknik | [#6](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/6) Motor/Android fizibilitesi | Godot/Unity ve yerel test önerisi | GDD; #4/#5 çıktısıyla revizyon |
@@ -27,7 +27,9 @@
 
 **Kaynak kalitesi:** Resmî mağaza açıklaması mekanik beyanı sağlar, tam oynanışın kanıtı değildir. Oyun içi davranış için mümkünse kısa ekran kaydı + zaman kodu gerekir. Yoksa BELİRSİZ bırakılır; izlenmemiş video oynanmış gibi raporlanmaz.
 
-**Arkadaşın onayı gecikirse:** #2/#5/#6 gibi araştırmalar taslak olarak ilerleyebilir. D-001 tek/takım/hibrit, D-003 kamera, D-005 motor ve D-007 ne savunuluyor kararları gerekiyorsa Faz 1 READY önkoşulu olarak bloke edilir. GDD'de OPEN kalırlar, herhangi biri sessizce seçilmez.
+**25 cevap sonrası:** [GDD v0.2](../game-design/GDD.md) ve [görüş iz kaydı](../requirements/design-intake-2026-10-27.md) hazırdır. Hibrit ana + yardımcı ejderha, oto hareket/saldırı + manuel/auto özel yetenek, yatay 2.5D, ana ejderha HP, her bölüm boss, kalıcı/geçici evrim, özelleştirilebilir build yönleri `DIRECTION_RECEIVED` statüsündedir; APPROVED sayılmaz. #3 artık 'hiç cevap yok' değil, kalan belirsizlikleri ve ürün sahibi onayını derler.
+
+**Faz 1'i etkileyecek OPEN kararlar:** D-005 oyun motoru ve 2.5D sahne yöntemi; D-008 '4 dakika' tanımı/boss süresi; D-010 iki geliştirici kontrolü/IP ve public repo; ilk kısa demoda özel yetenek/Rage/helper sistemlerinin hangi düzeyde bulunacağı. Bu kararlar sessizce onaylanmaz. Araştırma/görev hazırlığı bunlar netleşene kadar durmak zorunda değil.
 
 ## Kabul kapısı
 
