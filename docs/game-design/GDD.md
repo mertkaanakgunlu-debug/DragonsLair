@@ -1,126 +1,149 @@
-# Game Design Document (GDD) — DragonsLair
-**Sürüm:** 0.1 / keşif taslağı  
-**Tarih:** 2026-10-26  
-**Durum:** DRAFT — ürün sahibi arkadaşın geri bildirimi ve uygulamalı referans analizi bekleniyor  
-**Ad:** DragonsLair (repo/çalışma adı; marka kararı değildir)
+# DragonsLair — Game Design Document (GDD)
+**Sürüm:** 0.2 / ürün görüşü girdilerinin işlendiği taslak  
+**Tarih:** 2026-10-27  
+**Durum:** DRAFT — kullanıcı tarafından iletilen 25 ürün yanıtı kaydedildi; nihai ürün sahipliği/teknik onay ve referans oynanış doğrulaması bekliyor.  
+**Çalışma adı:** DragonsLair. Yayın/marka kararı değildir.
 
-## 1. Tek cümlelik ürün vaadi
-Oyuncu, mağarasında yeni doğmuş bir ejderhanın güçlenmesini deneyimler; otomatik savaş, düşman dalgaları ve roguelike yükseltme seçimleriyle önce küçük mağara canlılarına, zamanla yuvasını yağmalamaya gelen maceracılara karşı hayatta kalır.
+> **Karar statüsü sözlüğü:** `DIRECTION_RECEIVED` = konuşmada yön/tercih bildirildi, GDD'ye işlendi; resmi ürün onayı/READY demek değildir. `OPEN` = yanıt yok veya önemli alt tercih eksik. `DEFERRED` = bilinçli ertelendi. `APPROVED` = ürün sahiplerinin açık kararıyla kesinleştirildi. Şu belge hiçbir geliştirme fazını başlatmaz.
 
-## 2. Ürün kimliği — kullanıcı tarafından belirlenen ilkeler (arkadaş onayı bekleniyor)
-1. **Gameplay first.** Amaç referans oyunun sevilen döngüsüne yakın hisseden, tekrar oynanabilir bir savunma oyunu yapmaktır; tamamen başka tür bir oyuna dönüşmemek esastır.
-2. **Implicit narrative.** Hikâye anlatımı, ara sahne, zorunlu diyalog ve senaryo görevleri yoktur. Oyuncu ejderhanın büyümesini ve mağaranın zamanla insan baskınlarına hedef olmasını rakiplerden, çevreden ve güçlenmeden kendisi anlar.
-3. **Özgün içerik.** Ejderhalar, insan ve canavar düşmanları, sanat, ses, arayüz, ilerleme dengesi ve marka özgün tasarlanacak; referans oyundan korunabilir yaratıcı ifade kopyalanmayacak.
-4. **Hızlı prototip.** Önce savaş hissi doğrulanacak; büyük içerik, ekonomi ve yayın sistemi sonradan değerlendirilecek.
+## 1. Ürün vizyonu ve referans sınırı
+Stickman Defense: Survival TD'nin **savaş içi yükseltme seçimi, seçilen yükseltmelerin sonraki seçenekleri etkilemesi, farklı build oluşturma, otomatik savaş, dalga/boss mücadeleleri ve kalıcı gelişim** deneyimini koruyan; ancak **özgün** ejderha karakterleri, yardımcı ejderhalar, özel yetenekler ve evrim seçenekleri olan mobil savunma/roguelike oyunudur.
 
-## 3. Referans oyun ve doğrulama düzeyi
-**Stickman Defense: Survival TD — Pusilung**  
-Resmî Google Play sayfası: https://play.google.com/store/apps/details?id=com.thp020.stickman.casual.war.game
+**Gameplay-first, implicit narrative:** Oyuncu yavru ejderhayla mağarada küçük yaratıklara karşı başlar; farklı mağara bölgelerinde büyüyerek goblinler, kurtlar ve diğer ejderhalara, sonunda hazine avcıları, şövalyeler, okçular, büyücüler, paladinler ve rahiplerin baskınlarına karşı koyar; ilerleyen oyun dış dünyaya taşar. Bu, zorunlu ara sahne/diyalog/öykü görevi anlamına **gelmez**. Düşman ve ortam çeşitliliği yalnızca ilerleme hissine hizmet eder.
 
-Mağaza açıklamasında aktarılan üst düzey unsurlar: roguelike / tower-defense / idle aksiyon RPG karışımı, otomatik savaş, beceri kartı seçme/birleştirme, dalga savunması, karakterin saldırı hızı/kritik/savunma gibi gelişim parametreleri, ekipman, destekçi/pet, boss dövüşleri ve çevrimdışı oynama. Bu **mağaza açıklaması düzeyinde teyittir**, bütün ayrıntıların uygulamada bizzat test edildiği anlamına gelmez.
+**Özgünlük:** Rakibin kaynak kodu, telifli görsel/ses, karakter tasarımı, ayırt edici arayüz kompozisyonu veya metinleri alınmaz. “Referansın savaş düzenine yakın” isteği işlevsel mekanik yaklaşıma ilişkindir, piksel kopyasına değil.
 
-**Faz 0'da uygulamalı inceleme bekleyenler:** kamera ve hareket kısıtları; ana saldırının tam hedefleme kuralı; dalga süreleri ve düşman giriş yolları; beceri seçiminde kaç kart sunulduğu; seçim anında savaşın durup durmadığı; gerçek ilerleme/ekonomi; yenilgi ve tekrar başlatma akışı; oynanış oturumu uzunluğu; ekran yönü; HUD; arkadaşın en beğendiği mikro detaylar. Görüntü/video ve arkadaşın deneyimiyle kanıt toplanacak.
+## 2. Gereksinimlerin kanıt düzeyi
+- **ÜRÜN TERCİHİ / DIRECTION_RECEIVED:** 2026-10-27 tarihinde kullanıcı tarafından yanıtlanan 25 tasarım sorusu. Cevaplar bu belgeye girdi oldu; arkadaşın ayrı/nihai onayı varsayılmıyor. Tam numaralı iz kaydı: [Intake-2026-10-27](../requirements/design-intake-2026-10-27.md).
+- **REFERANS OYUN KANITI:** Resmî [Google Play sayfası](https://play.google.com/store/apps/details?id=com.thp020.stickman.casual.war.game) çeşitli üst düzey özellikleri beyan eder; birebir mekanik davranış, kamera, UI ve tüm seçim kuralları oynanmış/incelemiş kabul edilmez. Bu alanlar [Issue #2](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/2) ile doğrulanacak.
+- **ÖNERİ:** Minimum prototipte bir test ejderhası ve sınırlı sayıda yetenek/evolution örneği; içerik sayıları ve işletim sistemi/engine seçimi sonradan onaylanır.
 
-**Özgünlük sınırı:** Genel tür mekanikleri incelenebilir, referans arayüz veya varlıkları birebir kopyalanamaz.
+## 3. Çekirdek oynanış ve kontrol
+1. Oyuncu başlangıçta **tek yavru ana ejderhaya** sahip olur; zamanla başka oynanabilir türler açılabilir. Savaşta **ana ejderha + yardımcı ejderhalar** yaklaşımı tercih edildi (`D-001`); yardımcıların açılma zamanı, sayısı ve rolü henüz açık.
+2. Normal saldırılar **ve hareket otomatik**; oyuncu savaş içi yükseltme/kart seçimlerini yapar.
+3. **Özel yetenekler** oyuncu tarafından elle tetiklenebilir; ayrıca tek tuşla **otomatik özel yetenek kullanımı** seçeneği vardır. Otomatik özel yeteneklerin zamanlama/öncelik kuralları ayrıca tasarlanır.
+4. Korunan varlık olarak **ana ejderhanın HP'si** tercih edildi; ayrı bir yuva/hazine HP'si ilk tasarımın zorunlu öğesi değil.
+5. Normal bölümler **düşman dalgalarından oluşur ve bölüm sonunda boss vardır.** Başarı/yenilgi, tekrar oynama ve koşu sonunda kalıcı ödül döngüsü vardır.
+6. Savaş içi yükseltmeler karaktere özgü ve **önceki kart/ekipman seçimine duyarlı** olmalıdır. Aynı yeteneği tekrar güçlendirme, sinerji ve sıra dışı derecede güçlü (“broken”) ancak ulaşılması keyifli kombinasyonların ortaya çıkması hedeflenen güç fantezisidir. Bunun için rastgelelik, seçim ağırlıkları ve denge tasarlanacak; her koşuda garanti güç fantezisi veya oyunu çökerten exploit anlamına gelmez.
+7. **Rage modu:** Belirli sayıda düşman öldürünce açılan/güçlenen savaş mekaniği tercih edildi; eşik, süre, reset kuralı ve manuel/otomatik kullanım davranışı `OPEN`.
 
-## 4. Hedef deneyim ve temel döngü — TASLAK
-1. Bölüme/koşuya gir; ejderha ya da onaylanmış savunma kadrosuyla mağarada konumlan.
-2. Düşman dalgaları oluşur; ejderha(lar) onaylanacak kurallarla **otomatik saldırır**.
-3. Düşmanlardan XP, puan veya savaş içi gelişim kaynağı kazanılır.
-4. Oyuncu düzenli aralıklarla sınırlı **roguelike yükseltme seçeneklerinden** birini seçer: saldırı biçimi, alan etkisi, element, hız, dayanıklılık, sinerji vb.
-5. Dalga/boss sonunu atlat; ödüller ve gerekiyorsa kalıcı ilerleme edin.
-6. Gelişen ejderhayla daha zor bölüm/koşuyu dene; farklı yükseltme kombinasyonları yarat.
+**Kamera:** Referans oyundaki savaş sunumuna benzer ritim/düzen tercih edildi; ekran **yatay**. **2.5D** sanat tercihi alındı, fakat kamera açısı/yerleşimi ve 2D sprite-derinlik vs 3D sahne uygulaması teknik araştırma sonrasında belirlenir.
 
-Bu çevrim asıl ürünün kendisidir. Henüz onaylanmamış ayrıntılar (ör. tam üç kart, sabit beş dakika, zorunlu boss sıklığı) **karar değildir**.
+## 4. Bölüm, etkinlik, zindan ve ödüller
+- **Normal dalga/bölüm hedef süresi:** 4 dakika. Bunun tek bir dalga mı, tüm bölümün dalgaları dahil süresi mi olduğu ve boss'un süreye dahil olup olmadığı Faz 0'da netleştirilecek.
+- **Özel etkinlik hedef üst sınırı:** 10 dakika.
+- **İlk oynanabilir demo:** 2–3 dakikalık bir dalga savaşı + sonunda boss. Bu, normal tam bölümden kısa bir **test** deneyimidir.
+- Referansın dalga/savunma içeriğine ek olarak **zindan (Dungeon Dive) ve farklı etkinliklerle sürekli ilerleme yolları** bulunmalı; miktar ve mod kuralları sonradan belirlenir.
+- **Enerji kazanımı daha kolay** ve **günlük Dungeon Dive giriş sayısı daha yüksek** olsun; referansa göre hangi oranda olduğu bilinmiyor. Erken prototipte eğlence döngüsünü enerji kapısıyla sınırlamak gerekmiyor.
+- **Kaybedilen koşu** baştan başlar; öldürülen canavar ve ilerleme üzerinden kısmi ödül alınır, miktar **tam maksimum ödülün %50'sini geçemez**. Formül, kötüye kullanım/farm riskleri ve ödül türleri TBD.
+- Her normal bölüm sonunda **davranışı veya stat odağı farklı bir boss** olsun; örn. yüksek HP, büyü hasarı, fiziksel güç. Aynı boss'un sadece HP artışı olması uzun vadeli hedefi karşılamaz.
 
-## 5. Mekanik bileşenler — ÖN TASARIM
-### 5.1 Savaş ve savunma
-- Otomatik saldırı; hedef seçimi, saldırı aralığı, hasar tipi ve alan hasarı parametreleştirilebilir olmalı.
-- Düşman dalgaları ve zorluk artışı içerik verisinden yönetilmeli; her düşman farklı hız/HP/davranışla ayırt edilebilir.
-- Savunulan nesnenin yalnız ejderhanın HP'si mi, yuva HP'si mi olduğu **OPEN**.
-- Oyuncunun konum/nişan kontrolü, kamera perspektifi ve ekranda birden fazla ejderha olup olmaması **OPEN**.
+## 5. Ejderha gelişimi ve build çeşitliliği
+### 5.1 Kalıcı meta gelişim
+- Ana ejderhanın seviyesi koşular arasında **kalıcı**.
+- Bazı pasif yetenekler, **ekipman**, **rünler/taşlar** ve uygun kaynaklar kalıcı.
+- **Ekipman kişiselleştirmesi** farklı savaş tarzları yaratmalı; seçilen silah/ekipman profili savaş içinde sunulabilecek eklenti türlerini etkileyebilmeli.
+- Tam teçhizat slotu, silahın ejderha anatomisine nasıl uyarlanacağı, nadirlik/upgrade ve ekonomi kuralları `OPEN`; “silah” mutlaka insan tipi elde tutulan bir silah olmak zorunda değil (pençe/nefes odağı gibi adaylar).
 
-### 5.2 Yetenek ve roguelike seçimleri
-- Savaş içi seçimler karar vermeye değer olmalı: artan saldırı hızı, ateş püskürtme paterni, zincirleme etki, yavaşlatma, savunma vb. **örneklerdir**.
-- Başlangıçta çok sayıda kart değil, birkaç anlamlı ve test edilebilir kombinasyonla ilerle.
-- Kartların sayısı, nadirlik, tekrar çekme, birleştirme ve sinerji kuralları referans analizinden sonra belirlenir.
+### 5.2 Geçici koşu gelişimi
+- Her koşuda yeni kartlar/güçler seçilir, aynı kart tekrarlanıp kademeli güçlendirme yapılabilir.
+- Kart havuzu mevcut ejderha türüne, seçili ekipman/silah kategorisine ve önceki kartlara tepki verir.
+- Geçici evrim/güçlenme de mümkün; **kalıcı evrim + koşuya özel dönüşüm** birlikte arzu ediliyor.
+- Evrim yeni **görünüş, vücut parçaları, animasyon ve saldırı biçimi** getirmeli; yalnız ölçek büyütmek yeterli değil.
+- Birçok ejderha türüne genişleyebilen **veri temelli ve yeniden kullanılabilir içerik üretimi** hedeflenir; *ilk MVP'de her tür ejderhayı üretme yükümlülüğü yoktur*.
 
-### 5.3 Kalıcı gelişim ve evrim
-- Ejderhanın küçükten büyüğe dönüşmesi ana görsel/oynanış ilerleme motifidir.
-- Kalıcı güçlenme ile tek koşudaki geçici yükseltmeleri açıkça ayır.
-- Evrim yalnız kozmetik olmak zorunda değildir; yeni saldırı biçimleri ve taktik seçenekler açabilir. Ancak evrim ağacı sayısı, dallar ve ekonomi **OPEN**.
-- Ateş/Buz/Fırtına gibi elementler yalnız **değerlendirilecek fikir**; onaylanmış başlangıç kadrosu değil.
+### 5.3 Ana/yardımcı ejderhalar
+- Petler yerine **oyun dünyasına uygun yardımcı ejderhalar** olacak; nasıl edinildikleri, kaç tane oldukları, destek mi saldırı mı yaptıkları ve kalıcı olup olmadıkları TBD.
+- Başlangıçta tek yavru ana ejderha; sonraki türler ilerledikçe açılabilir. Bu, takım/hibrid yanıtlarıyla çelişmez: **başlangıç kadrosu tek, ileriki savaşa yardımcı katılabilir.**
 
-## 6. Düşman ve ortam ilerlemesi — TEMATİK TASLAK
-| İlerleme bandı | Düşman örnekleri | Ortam/oynanış anlamı |
+## 6. Düşman, boss ve mekân ilerlemesi (örtük anlatı)
+| Basamak | Aday düşmanlar | Oyun hissi |
 |---|---|---|
-| Erken | Örümcek, sıçan, küçük böcek | Yeni doğmuş ejderhanın ilk savunmaları |
-| Büyüme | Akrep, iri örümcek, yarasa | Daha tehlikeli mağara bölgeleri |
-| Güçlenme | Goblin, kurt, mağara canavarı | Ejderhanın yerel tehditleri aşması |
-| İnsan teması | Keşifçi, hazine avcısı | Yuva artık fark ediliyor |
-| Baskınlar | Şövalye, okçu, büyücü, ejderha avcısı | İnsanların ejderhaya düzenli saldırısı |
-| İleri oyun | Elit baskın timleri, özel boss'lar | Büyük savunma mücadeleleri |
+| 1 — Yavru / mağara | örümcek, sıçan, küçük böcek | ilk savunma, büyümenin başlangıcı |
+| 2 — Derin mağara | akrep, iri yaratıklar, goblin, kurt | güç ve çeşitlenen tehdit |
+| 3 — Rakipler | rakip ejderhalar, güçlü canavarlar | artık başka tehditlere meydan okuma |
+| 4 — İnsan keşifleri | keşifçi, hazine avcısı, savaşçı | mağaranın fark edilmesi |
+| 5 — Akınlar | şövalye, okçu, büyücü, paladin, rahip, ejderha avcısı | sistematik insan baskınları |
+| 6 — Dış dünya | seçkin timler, diğer ejderhalar, ileri boss'lar | mağara dışına açılma, yeni yaşam alanları |
 
-Bu **senaryo bölümleri zorunluluğu** veya lineer görev zinciri değildir. Dalga/içerik sıralamasına yön veren örtük anlatı çerçevesidir. Düşman sıralaması oyun dengesiyle değişebilir.
+İçerik sırası mekanik tempo ve dengeye göre ayarlanabilir; zorunlu lineer hikâye, cutscene, diyalog veya görev zinciri tasarlanmaz.
 
-## 7. Görsel / animasyon / asset yaklaşımı — AÇIK
-- Hedef: mekanikleri net okutan, mobil performansa uygun özgün karakter ve efektler.
-- Aday üretim hatları: (A) 2D sprite/skeletal cutout + motor animasyon sistemi, (B) 3D model + rig/animasyon + uygun motor. Seçim bir küçük ejderha, bir düşman ve bir saldırı efektiyle yapılan **görsel fizibilite değerlendirmesi** sonrası verilecek.
-- AI konsept üretimi mümkündür; oyun-hazır tutarlı sprite/rig/mesh/animasyon **otomatik garanti değildir**. Claude Code; asset dönüştürme, import, araç betikleri, efekt/shader ve oyun içi bağlama işleri yapabilir. Nihai sanat kalitesi gözle kontrol edilir.
-- Her asset için kaynak, lisans, ticari kullanım, üretim aracı/sürümü, değiştirilmiş dosya ve gerekiyorsa insan onayı kaydı tutulur. Telifli oyundan asset çıkarılmaz.
+## 7. Sanat, animasyon ve AI üretimi
+- **Sanat tonu:** Stilize, fantastik, güçlendikçe daha görkemli.
+- **Sunum tercihi:** 2.5D; teknik karşılığı (3D modeller + sabit kamera / 2D derinlik hissi) ve motor seçimi TBD.
+- Yapay zekâdan olabildiğince yararlanılsın; ancak **üretilmiş konsept resmi = oyun-hazır animasyon/rig/efekt** değildir. Tutarlılık, farklı form/evrim animasyonları, performans ve lisans için kalite kapısı zorunlu.
+- Claude Code asset düzenleme, import, rig/animasyon yardımcı betikleri, shader/partikül ve oyun entegrasyonunu otomatikleştirebilir; çıktılar gerçek sahnede gözle incelenir.
+- Kaynak/lisans, üretim araçları ve ticari kullanım hakkı her varlık için kayıt edilir. Ücretli araç kullanımı kullanıcı onayı gerektirir.
 
-## 8. UX ve ekonomi — KARARA BAĞLANMAMIŞ
-- Ekran yönü ve kontrol şeması, gerçek oynanış analizi sonrası netleşir.
-- HUD savaş durumunu, seçilebilir yükseltmeyi ve düşman tehdidini okunur göstermeli; referansın özgün yerleşimi kopyalanmamalı.
-- Kalıcı para birimleri, ekipman, idle ödül, reklam, satın alma, enerji ve sezon sistemleri MVP'ye **otomatik dahil değildir**. İlkin eğlence ve denge kanıtlanacak.
-- Offline oynama MVP hedefi olarak değerlendirilebilir; sunucu bağımlılığı sadece onaylı somut ihtiyaç varsa eklenir.
+## 8. Hedef platform, gelir ve güvenlik
+- **Önce Android, sonra iOS**; Android üzerinde oynanabilir mobil MVP. Windows'ta yerel geliştirme ve test yaklaşımı.
+- **Önce eğlenceli oyun, gelir modeli sonra.** Reklam, IAP, enerji monetizasyonu ve live ops ilk prototipe zorla eklenmez.
+- **İki geliştiricinin kontrolünde** yürütülecek. Bu yönetsel tercih hisse/IP paylaşımı, dış yayın hesapları, fikrin sahibi arkadaşın hakları ve GitHub sahiplik haklarının ayrıntısını hukuken belirlemez. Depo şu anda `public`; görünürlük ve IP sahipliği **OPEN**.
+- **GitHub Actions / hosted CI yok.** Yerel hedefli testler, Issue sonu smoke, faz sonu ilgili regresyon, MVP eşiğinde gerçek cihaz testi. Çalışmayan testler `NOT RUN`.
 
-## 9. İlk prototip / MVP kapsam ayrımı
-**Vertical slice önerisi (ürün mimarisini kilitlemez):** bir yavru ejderha test karakteri, mağara sahnesi, örümcek ve sıçan düşmanları, otomatik saldırı, dalga üretimi, savaş içi birden fazla upgrade seçeneği, basit kaybet/kazan akışı. Amaç eğlence, okunabilirlik, performans ve AI destekli asset/animasyon hattını doğrulamak.
+## 9. İlk prototip, MVP ve kapsam sınırı
+### Faz 1 için kullanıcı tarafından istenen ilk demo
+- Küçük yavru ana ejderha, otomatik hareket ve saldırı.
+- Tek kısa mağara sahnesinde düşman dalgası, **2–3 dakika**, sonunda bir boss.
+- **Savaş içi beceri kartları**, en az birkaç anlamlı yükseltme/sinerji denemesi.
+- **Birkaç evrim örneğinin** etkisini gösteren, nicelik hedefi sonradan belirlenecek görsel ve saldırı davranışı.
+- Saldırı/hasar, HP, dalga/başarı/yenilgi, yükseltme farkı gözlenebilir.
+- Manuel/auto özel yetenek ve Rage gibi mekaniklerin **prototip çekirdeğine mi, sonraki iterasyona mı** gireceği onayla belirlenecek; teknik sözleşmeleri en azından değerlendirilir.
 
-**MVP kapsamı:** Vertical slice playtest sonucunda belirlenecek. İçerik sayıları, motor, oturum süresi, para sistemi, evrim sayısı şu anda taahhüt değildir.
+### İlk demo dışındaki ürün vizyonu (otomatik kapsam taahhüdü değil)
+Yardımcı ejderhalar, tür çeşitliliği, tam ekipman ve rün ekonomisi, Dungeon Dive/günlük etkinlikler, ilerleme ve kısmi ödül sistemi, detaylı Rage dengesi, dış dünya biyomları, tüm boss çeşitliliği, tüm evrim ağacı ve mobil yayın kalitesi sonraki fazların adaylarıdır.
 
-**MVP dışı varsayılanlar:** online PvP, multiplayer, sunucu ekonomi sistemi, canlı etkinlikler, abonelik, ücretli sandıklar, sezonluk içerik ve agresif reklam sistemleri.
+### Çıkış ölçütü
+Bir test oyuncusu hikâye metni olmadan kısa koşuyu başlatabilir, ejderhanın otomatik saldırdığını görebilir, kartın saldırı hissini değiştirdiğini fark eder, evrim farkını deneyimler ve boss sonucunu görür. Oyun hissi manuel test edilir; salt birim testiyle PASS sayılamaz.
 
-## 10. Faz yaklaşımı (öneri, henüz başlatılmadı)
-- **Faz 0 — Referans analizi ve tasarım:** oynanış envanteri, arkadaşın öncelikleri, kritik kararlar, hafif görsel/teknik fizibilite; GDD revizyonu ve prototip görevleri.
-- **Faz 1 — Temel savaş prototipi:** tek sahne, düşman dalgaları, otomatik savaş, XP ve yükseltme seçimleri; geçici görseller kullanılabilir.
-- **Faz 2 — Ejderha gelişimi ve evrim:** prototip sonucuna göre kalıcı ilerleme, evrim ve ejderha organizasyon modelinin ilk sürümü.
-- **Faz 3 — Görsel kimlik ve içerik:** düşman katmanları, özgün ejderha/görsel/animasyonlar, okunur UI ve sesler.
-- **Faz 4 — Mobil MVP ve oyun testleri:** Android paketleme, performans, kayıt güvenilirliği, cihaz smoke testleri, playtest ve dengeleme.
-- **Faz 5 — Yayın hazırlığı:** yalnız MVP eğlence ve kalite kabulünden sonra mağaza, lisans, gizlilik ve yayın stratejisi.
+## 10. Fazlar (üst düzey öneri, henüz kesinleştirilmedi)
+- **Faz 0 — Referans analizi / GDD / teknik & sanat fizibilitesi.** Mevcut DRAFT Issue #2–#8. Yeni yanıtlar #3 için gereksinim girdi ve diğer Issue'lar için kısıt oldu.
+- **Faz 1 — Çekirdek savaş prototipi.** Kısa mağara koşusu, otomatik hareket/saldırı, kartlar, boss, sınırlı evrim örneği. Sıra, demo kapsamı ve özel yetenek önceliği Faz 0 sonunda onaylanır.
+- **Faz 2 — Ejderha gelişimi, build ve savaş katmanı.** Kalıcı stat/ekipman/rün, koşu yükseltmeleri, Rage, özel yetenek auto-tetikleme, yardımcı ejderha ve sistem sinerjileri için kademeli plan.
+- **Faz 3 — Görsel üretim hattı ve içerik.** 2.5D stilin uygulanması, evrim animasyonları, düşman/boss farklılıkları, zindan/etkinlik adayları ve mekân çeşitliliği.
+- **Faz 4 — Android MVP + playtest.** 4 dakikalık normal bölüm hedefi, özel etkinlikler için maksimum 10 dakika, kayıt/ödül sistemi, gerçek cihaz performansı ve denge; hangi sistemlerin MVP kapsamında olacağı oyun testlerinden sonra kesinleştirilir.
+- **Faz 5 — Yayın hazırlığı.** Uygulama mağazaları, IP/lisans/marka, varsa ticari model ve dağıtım kararı.
 
-Her faz **Issue listesi, kabul kriterleri, yerel hedefli test kanıtı, bağımsız inceleme ve kullanıcı onayı** ile ilerler. Faz isimleri yol haritası önerisidir; ürün sahibi onayı bekleniyor.
+**Proje/faz numaraları değişmedi; içerik yoğunluğu ve gerekirse alt dilimler Phase 0 onayı sonrası değerlendirilecek.** Faz 0 DRAFT planı: [phase-0-plan.md](../phases/phase-0-plan.md).
 
-## 11. Performans, kalite ve test ilkeleri
-- **Hosted CI / GitHub Actions yok.** Her commit'te tüm testleri çalıştırmak da yok.
-- Günlük geliştirmede etkilenen mekanik için hızlı birim/lint; Issue çıkışında ilgili sahne smoke; fazda ilgili regresyon; MVP'de gerçek Android cihaz + kapsamlı test.
-- Oyun hissi, düşman görünürlüğü ve beceri seçimleri gerçek oynanış izlenerek değerlendirilir; yalnız otomatik test eğlenceyi kanıtlamaz.
-- Test kanıtları exact HEAD ve ortamla ilişkilendirilir. Koşulmayan testler `NOT RUN` yazılır.
+## 11. Açık karar defteri — tek kanonik karar listesi
+Aşağıdaki `DIRECTION_RECEIVED` satırları cevaplanan tercihlerdir; **APPROVED sayılmaz**. Bunların ürün sahiplerince son kabulü, kapsamların READY yapılması ve teknik plan kararı ayrı işlemdir.
 
-## 12. Açık karar defteri — arkadaşın yanıtı beklenecek
-| ID | Karar | Mevcut durum | Öncelik |
+| ID | Başlık | Durum / alınan yön | Çözülmesi gereken alt karar |
 |---|---|---|---|
-| D-001 | Tek ana ejderha mı, takım mı, hibrit mi? | OPEN | Yüksek |
-| D-002 | Referans oyunda en sevilen 3–5 mikro mekanik hangileri? | OPEN | Çok yüksek |
-| D-003 | Oyuncu ejderhayı hareket ettirecek mi? Savaş alanı/kamera nasıl? | OPEN | Yüksek |
-| D-004 | 2D, 2.5D veya 3D sanat yaklaşımı | OPEN | Orta |
-| D-005 | İlk oyun motoru ve export hedefleri | OPEN (Godot aday) | Orta |
-| D-006 | Evrim şekil mi, mekanik dal mı, ikisi birden mi? | OPEN | Yüksek |
-| D-007 | Korunan şey ejderhanın HP'si, yuva mı, hazine mi? | OPEN | Yüksek |
-| D-008 | Run başına hedef süre, kaybetme ve kalıcı ilerleme akışı | OPEN | Orta |
-| D-009 | Sanat tonu (sevimli, karanlık, stilize vb.) | OPEN | Orta |
-| D-010 | Arkadaşın fikrî mülkiyet, repo ve yayın sahipliği | OPEN | Yüksek |
-| D-011 | Para kazanma ve reklam yaklaşımı | DEFERRED | Düşük |
-| D-012 | İlk Android cihazlar ve min. performans hedefi | OPEN | Orta |
+| D-001 | Kadro modeli | DIRECTION_RECEIVED — ana + yardımcı ejderha (hibrit), başlangıç tek yavru | yardımcı açılış, sayı, roller |
+| D-002 | Referansta sevilenler | DIRECTION_RECEIVED — eklenti/kart koşullu güçlenmesi, build özelleştirme, alternatif sürekli ilerleme | gerçek oynanış kurallarını kanıtla |
+| D-003 | Kontrol/kamera | DIRECTION_RECEIVED — otomatik hareket/saldırı, manuel/auto özel yetenek, yatay referans benzeri | tam kamera açısı, HUD özgün kompozisyonu |
+| D-004 | Sanat tekniği | DIRECTION_RECEIVED — 2.5D | gerçek 2D/3D pipeline, animasyon denemesi |
+| D-005 | Oyun motoru | OPEN — Godot/Unity değerlendirilecek | lokal test, Android export, ekip yetkinliği |
+| D-006 | Evrim | DIRECTION_RECEIVED — kalıcı + geçici; görsel ve saldırı değişir | eşikler, ağaç/çeşit, prototip örnekleri |
+| D-007 | Kaybetme nesnesi | DIRECTION_RECEIVED — ana ejderha HP | yardımcı hasar/ölüm kuralları |
+| D-008 | Koşu süresi/sonuç | DIRECTION_RECEIVED — normal 4 dk, etkinlik ≤10 dk, yenilgide kısmi ödül ≤%50 | 4 dk tek dalga mı tüm bölüm mü; boss süresi/ödül formülü |
+| D-009 | Sanat tonu | DIRECTION_RECEIVED — stilize fantazi, 2.5D | referans görseli ve üretim stil kılavuzu |
+| D-010 | Sahiplik/IP | OPEN — iki geliştirici kontrol etsin | kişilerin yetkisi, fikrin sahibinin hakkı, repo public/private, yayın hakları |
+| D-011 | Monetizasyon | DEFERRED — önce eğlence; model sonra | reklam/IAP ve enerji kısıtları |
+| D-012 | Hedef cihaz/platform | DIRECTION_RECEIVED — Android → iOS | cihaz, minimum Android / FPS ve performans |
+| D-013 | Rage modu | DIRECTION_RECEIVED — kill eşiğinde açılır | sayaç/reset/eşik/süre/etki |
+| D-014 | Yardımcı ejderha | DIRECTION_RECEIVED — pet yerine helper dragon | edinim, roller, savaş içi kontrol |
+| D-015 | Enerji ve Dungeon Dive | DIRECTION_RECEIVED — enerji daha kolay, giriş hakkı daha yüksek | sayısal oran ve gerekli olup olmadığı |
+| D-016 | Build / ekipman / rün | DIRECTION_RECEIVED — kalıcı ekipman/taş + koşula duyarlı beceri havuzu | slotlar, sinerji, kaydetme ve meta ekonomisi |
+| D-017 | Boss ve dünya | DIRECTION_RECEIVED — bölüm sonu farklı boss, mağaradan dış dünyaya | demo boss tasarımı, harita temposu |
 
-Bir karar cevaplandığında yalnız ilgili satır **APPROVED** olarak güncellenir; bağlı kabul kriterleri ve ilgili Issue'lar revize edilir. Cevap yoksa keyfi kesinleştirme yapılmaz.
+## 12. Faz 0'da mutlaka netleştirilmesi gerekenler (kısa liste)
+1. **Referans ekran kaydı**: kamera, kart/upgrade geliş mekanikleri, koşu ve boss geçişleri; [#2](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues/2).
+2. **2.5D teknik çözüm** ve oyun motoru; #5/#6.
+3. **4 dakika tanımı**: bir bölüm toplamı mı tek dalga mı, boss bu süreye dahil mi?
+4. **İlk 2–3 dakikalık demoda** kaç yükseltme/evrim, Rage ve özel yetenek toggle nerede başlayacak?
+5. **Public repo ve fikrî mülkiyet**: iki geliştiricinin kontrol düzeyi, içerik ve mağaza hesapları; #3.
+6. Referansın keyif veren build-zinciri mekaniklerinin hangi davranışları birebir hissettirilecek, hangileri özgün ejderha varyantları olacak?
 
-## 13. İlk kabul ölçütü: doğru sorunu çözen deney
-Faz 1 sonunda bir oyuncu, hikâye metni okumadan bir mağara savunma koşusunu başlatabilmeli; düşmanların geldiğini, ejderhanın otomatik savaştığını, seçtiği yükseltmenin etkisini ve başarısızlık/başarı sonucunu **oyun içinde** görebilmelidir. Prototip gerçek oyun estetiğine ulaşmak zorunda değil, ancak oynanışı hissettirmelidir.
+Bunlar netleşene dek belirsizlikler mimariye gizlice gömülmeyecek; ancak belgeler üzerinde planlamayı durdurmaz.
 
-## 14. Revizyon protokolü
-Her arkadaş geri bildirimi şu biçimde işlensin: `Girdi / Etkilenen bölüm / Önerilen değişiklik / Ürün kararı gerekli mi? / Onaylayan / GDD sürümü / Bağlı Issue`. Ayrıntılı yeni görüşler geldiğinde bu belge güncellenir; önceki fikirlerin sessizce silinmesi yerine değişiklik notu tutulur.
+## 13. Test, kanıt ve onay
+Kod yokken yalnız doküman/bağlantı/kapsam tutarlılık kontrolü; uygulama testi `NOT RUN`; GitHub Actions `NOT RUN (budget)`. Devam eden implementasyonda değişiklik odaklı küçük testler → Issue smoke → faz sonu seçilmiş regresyon → MVP gerçek Android.
 
-### Değişiklik kaydı
-- **v0.1 — 2026-10-26:** İlk ürün vizyonu, referans mekanikleri, gameplay-first + implicit narrative ilkesi, düşman ilerlemesi, geliştirme modeli ve açık karar listesi. Henüz ürün sahibinin son onayı yok.
+Akış: DRAFT → READY (açık kullanıcı onayı) → IN_PROGRESS (faz başlat) → REVIEW (diff, test, exact HEAD) → ACCEPTED / REVISION_REQUIRED / BLOCKED. GitHub PR merge **ayrı kullanıcı izni** gerektirir. Başka faz kendiliğinden başlamaz.
+
+## 14. Değişiklik geçmişi
+- **v0.1 — 2026-10-26:** İlk ilke, referans sınırı, örtük anlatı, belirsiz kararlar.
+- **v0.2 — 2026-10-27:** 25 yanıt işlendi: hibrit ejderha, otomatik hareket/saldırı + özel yetenek, yatay 2.5D, koşu süresi ve kayıp ödülü, build/ekipman/rün, Rage, geçici/kalıcı evrim, boss, zindan/etkinlik, AI asset, Android → iOS ve demo. Durum hâlâ DRAFT.
