@@ -1,7 +1,7 @@
 # Faz 0 — Referans Oyun Analizi ve Tasarım Doğrulaması
 
 **Durum:** DRAFT / plan hazır, **çalışma BAŞLAMADI**  
-**Güncelleme:** 2026-10-27 — 25 cevap görüş girdisi geldi, görevler hâlâ DRAFT  
+**Güncelleme:** 2026-10-27 — 25 cevap + 4 takip netleştirmesi kaydedildi; görevler hâlâ DRAFT  
 **Bağlı PR:** #1 (başlangıç belgeleri; draft, merge değil)  
 **Amaç:** Stickman Defense: Survival TD oynanışının gerçekten sevilen prensiplerini anlamak ve bunlara dayalı, özgün bir ejderha savunma prototipini küçük, test edilebilir görevlere çevirmek.
 
@@ -27,9 +27,9 @@
 
 **Kaynak kalitesi:** Resmî mağaza açıklaması mekanik beyanı sağlar, tam oynanışın kanıtı değildir. Oyun içi davranış için mümkünse kısa ekran kaydı + zaman kodu gerekir. Yoksa BELİRSİZ bırakılır; izlenmemiş video oynanmış gibi raporlanmaz.
 
-**25 cevap sonrası:** [GDD v0.2](../game-design/GDD.md) ve [görüş iz kaydı](../requirements/design-intake-2026-10-27.md) hazırdır. Hibrit ana + yardımcı ejderha, oto hareket/saldırı + manuel/auto özel yetenek, yatay 2.5D, ana ejderha HP, her bölüm boss, kalıcı/geçici evrim, özelleştirilebilir build yönleri `DIRECTION_RECEIVED` statüsündedir; APPROVED sayılmaz. #3 artık 'hiç cevap yok' değil, kalan belirsizlikleri ve ürün sahibi onayını derler.
+**Ürün görüşleri sonrası:** [GDD v0.3](../game-design/GDD.md) ve [görüş iz kaydı](../requirements/design-intake-2026-10-27.md) hazırdır. Hibrit ana + yardımcı ejderha, oto hareket/saldırı + manuel/auto özel yetenek, yatay 2.5D, ana ejderha HP, her bölüm boss, kalıcı/geçici evrim, özelleştirilebilir build yönleri `DIRECTION_RECEIVED` statüsündedir; APPROVED sayılmaz. #3 artık 'hiç cevap yok' değil, kalan belirsizlikleri ve ürün sahibi onayını derler.
 
-**Faz 1'i etkileyecek OPEN kararlar:** D-005 oyun motoru ve 2.5D sahne yöntemi; D-008 '4 dakika' tanımı/boss süresi; D-010 iki geliştirici kontrolü/IP ve public repo; ilk kısa demoda özel yetenek/Rage/helper sistemlerinin hangi düzeyde bulunacağı. Bu kararlar sessizce onaylanmaz. Araştırma/görev hazırlığı bunlar netleşene kadar durmak zorunda değil.
+**Yeni takip kararları:** Normal bölümün dalga kısmı toplam **4 dk**, ardından boss gelir; kısa Faz 1 demosunda **2–3 dk dalga + boss, kartlar ve örnek evrimler** bulunur, Rage/manuel-oto özel yetenek/yardımcılar sonra. **Faz 0 kapsamı:** 2D katmanlı derinlik ile 3D sabit kamera yaklaşımını küçük ve karşılaştırılabilir teknik denemelerle değerlendirmek. **OPEN:** motor ve nihai 2.5D yöntem (D-004/D-005), boss üst süre/zaman aşımı ve ödül formülü (D-008), fikrî mülkiyet ve repo görünürlüğü (D-010); son kullanıcı onayı da bekliyor. Araştırma/görev hazırlığı bu açık kararları kapatmış sayılmaz.
 
 ## Kabul kapısı
 
