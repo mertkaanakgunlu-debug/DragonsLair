@@ -1,6 +1,6 @@
 # DragonsLair
 
-**Durum:** Tasarım / keşif hazırlığı — **DRAFT**. Geliştirme fazı henüz başlatılmadı. Bu repo bir oyunun mevcut kaynak kodunu klonlamak için değil, özgün bir oyun geliştirmek içindir.
+**Durum:** Tasarım / keşif hazırlığı — **DRAFT**. 25 ürün yanıtı işlenmiş, nihai onay bekleniyor. Geliştirme fazı henüz başlatılmadı. Bu repo bir oyunun mevcut kaynak kodunu klonlamak için değil, özgün bir oyun geliştirmek içindir.
 
 ## Ürün vizyonu
 
@@ -10,7 +10,9 @@ Korunabilir yaratıcı ifade, kod, arayüz kompozisyonları, sesler veya sanat v
 
 ## Kanonik belgeler
 
-- [GDD v0.1 — oyun tasarım taslağı](docs/game-design/GDD.md)
+- [GDD v0.2 — ürün yönünü içeren oyun tasarım taslağı](docs/game-design/GDD.md)
+- [25 soruluk ürün görüşü izi](docs/requirements/design-intake-2026-10-27.md)
+- [Faz 0 DRAFT görev planı](docs/phases/phase-0-plan.md)
 - [Önerilen yol haritası — Faz 0–5](docs/roadmap.md)
 - [Açık kararlar ve ADR işleyişi](docs/decisions/README.md)
 - [Yerel test / CI maliyet politikası](docs/operations/testing.md)
@@ -27,6 +29,6 @@ Her faz, ayrı onaylanmış READY Issue setiyle başlatılır. Çalışmalar izo
 
 ## Açık kararlar
 
-En önemlisi **tek ana ejderha / ejderha takımı / hibrit** modeli; ayrıca kamera, 2D/3D, oyun motoru, evrim yapısı, oynanış oturumu ve fikrî mülkiyet sahipliği kesinleşmedi. Bunlar [GDD açık karar listesinde](docs/game-design/GDD.md#12-açık-karar-defteri--arkadaşın-yanıtı-beklenecek) korunur.
+Yeni görüşte **hibrit ana ejderha + yardımcı ejderhalar**, otomatik hareket/saldırı, **yatay 2.5D** ve kalıcı/geçici evrim istendi; bunlar `DIRECTION_RECEIVED`, henüz ürün sahiplerince nihai `APPROVED` değildir. Motor, kesin kamera/2.5D uygulama yöntemi, bazı süre kuralları ve fikrî mülkiyet hâlâ açık. Tek karar listesi [GDD §11](docs/game-design/GDD.md) içindedir.
 
-**Sıradaki adım:** Faz 0'ı kullanıcıyla birlikte ayrıntılandırmak, küçük ve test edilebilir Issue taslakları hazırlamak; onay gelmeden uygulamaya geçmemek.
+**Sıradaki adım:** [Faz 0 DRAFT Issue #2–#8](https://github.com/mertkaanakgunlu-debug/DragonsLair/issues) kapsamını ve kalan açık kararları doğrulayarak READY onayı almak. PR #1 Draft/merge edilmedi, Faz 0 başlamadı.
